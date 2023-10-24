@@ -1,0 +1,15 @@
+diff --git a/src/timeline/EventBlock.js b/src/timeline/EventBlock.js
+index 8008c86d3aa18c3357355989bdc560b7b5d365af..07aaec998baffdc8ce9d73274ead146e098f21c8 100644
+--- a/src/timeline/EventBlock.js
++++ b/src/timeline/EventBlock.js
+@@ -15,7 +15,9 @@ const EventBlock = (props) => {
+             height: event.height,
+             width: event.width,
+             top: event.top,
+-            backgroundColor: event.color ? event.color : EVENT_DEFAULT_COLOR
++            backgroundColor: event.backgroundColor ?? '#1E293B',
++            borderWidth: 0,
++            borderRadius: 12,
+         };
+     }, [event]);
+     const _onPress = useCallback(() => {
