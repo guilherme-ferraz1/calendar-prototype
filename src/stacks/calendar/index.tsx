@@ -4,6 +4,7 @@ import { DateSelector } from '../../components/dateSelector'
 import { useCalendar } from '../../hooks/useCalendar'
 import { UserSelector } from '../../components/userSelector'
 import { Timeline } from '../../components/timeline'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 export const CalendarStack = () => {
   const { 
@@ -18,7 +19,7 @@ export const CalendarStack = () => {
   } = useCalendar()
 
   return (
-    <View useSafeArea backgroundColor={Colors.blueGray800} flex>
+    <SafeAreaView style={{ backgroundColor: Colors.blueGray800, flex: 1 }}>
       <View row paddingH-24 paddingV-24>
         <Text h1Bold color='white'>{currentDay}, </Text>
         <Text h1 color='white'>{currentYear}</Text>
@@ -30,6 +31,6 @@ export const CalendarStack = () => {
           <Timeline events={todayEventsForUser} selectedDate={selectedDate} />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
